@@ -1,5 +1,7 @@
 import React from "react";
 import Banner from "../Banner/Banner";
+import FacialBanner from "../FacialBanner/FacialBanner";
+import Footer from "../Footer/Footer";
 import Services from "../Services/Services";
 
 const Home = () => {
@@ -7,6 +9,8 @@ const Home = () => {
     <>
       <Banner></Banner>
       <Services></Services>
+      <FacialBanner></FacialBanner>
+      <Footer></Footer>
     </>
   );
 };
