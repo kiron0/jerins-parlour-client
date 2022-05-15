@@ -1,8 +1,10 @@
-import React from "react";
+import React, { Fragment } from "react";
 import client1 from "../../../Assets/Image/client-1.png";
 import client2 from "../../../Assets/Image/client-2.png";
 import client3 from "../../../Assets/Image/client-3.png";
 import star from "../../../Assets/Icon/star.png";
+
+import "./Testimonials.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
@@ -50,57 +52,75 @@ const Testimonials = () => {
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus commodo ipsum duis laoreet maecenas. Feugiat ",
     },
     {
-      image: client1,
-      name: "Nash Patrik",
+      image: client2,
+      name: "Miriam Barron",
       title: "CEO, Manpol",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus commodo ipsum duis laoreet maecenas. Feugiat ",
     },
   ];
 
   return (
-    <div className="py-24 lg:px-24">
-      <h1 className="text-3xl lg:text-4xl text-center font-bold pb-28">
-        Testimonials
-      </h1>
-      <Swiper
-        style={{ paddingBottom: "4.5rem" }}
-        slidesPerView={4}
-        spaceBetween={50}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
-      >
-        {testimonials.map(({ image, name, title, text }, index) => {
-          return (
-            <SwiperSlide
-              className="card w-full bg-base-100 shadow-xl px-6 rounded-md"
-              key={index}
-            >
-              <div className="flex items-center content-center gap-4 mx-auto mr-28">
-                <div>
-                  <img src={image} alt="Shoes" className="rounded-xl w-16" />
+    <Fragment>
+      <div className="py-24 lg:px-24">
+        <h1 className="text-3xl lg:text-4xl text-center font-bold pb-28">
+          Testimonials
+        </h1>
+        <Swiper
+          style={{ paddingBottom: "4.5rem" }}
+          breakpoints={{
+            // when window width is >= 640px
+            640: {
+              width: 640,
+              slidesPerView: 1,
+            },
+            // when window width is >= 768px
+            768: {
+              width: 768,
+              slidesPerView: 2,
+            },
+          }}
+          id="main"
+          width="480"
+          autoplay={true}
+          slidesPerView={4}
+          spaceBetween={50}
+          pagination={{
+            clickable: true,
+          }}
+          loop={true}
+          modules={[Pagination]}
+        >
+          {testimonials.map(({ image, name, title, text }, index) => {
+            return (
+              <SwiperSlide
+                className="card w-full bg-base-100 shadow-xl px-6 rounded-md"
+                key={index}
+              >
+                <div className="flex items-center content-center gap-4 mx-auto mr-28">
+                  <div>
+                    <img src={image} alt="Shoes" className="rounded-xl w-16" />
+                  </div>
+                  <div>
+                    <h2 className="card-title">{name}</h2>
+                    <h2 className="card-title">{title}</h2>
+                  </div>
                 </div>
-                <div>
-                  <h2 className="card-title">{name}</h2>
-                  <h2 className="card-title">{title}</h2>
+                <div className="card-body items-center text-start px-6">
+                  <p>{text}</p>
+                  <div className="flex mr-48">
+                    <img src={star} alt="star" className="w-6" />
+                    <img src={star} alt="star" className="w-6" />
+                    <img src={star} alt="star" className="w-6" />
+                    <img src={star} alt="star" className="w-6" />
+                    <img src={star} alt="star" className="w-6" />
+                  </div>
                 </div>
-              </div>
-              <div className="card-body items-center text-start px-6">
-                <p>{text}</p>
-                <div className="flex mr-48">
-                  <img src={star} alt="star" className="w-6" />
-                  <img src={star} alt="star" className="w-6" />
-                  <img src={star} alt="star" className="w-6" />
-                  <img src={star} alt="star" className="w-6" />
-                  <img src={star} alt="star" className="w-6" />
-                </div>
-              </div>
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
-    </div>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
+    </Fragment>
   );
 };
 
