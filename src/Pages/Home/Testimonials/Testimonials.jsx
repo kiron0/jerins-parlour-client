@@ -4,8 +4,6 @@ import client2 from "../../../Assets/Image/client-2.png";
 import client3 from "../../../Assets/Image/client-3.png";
 import star from "../../../Assets/Icon/star.png";
 
-import "./Testimonials.css";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 
@@ -67,20 +65,6 @@ const Testimonials = () => {
         </h1>
         <Swiper
           style={{ paddingBottom: "4.5rem" }}
-          breakpoints={{
-            // when window width is >= 640px
-            640: {
-              width: 640,
-              slidesPerView: 1,
-            },
-            // when window width is >= 768px
-            768: {
-              width: 768,
-              slidesPerView: 2,
-            },
-          }}
-          id="main"
-          width="480"
           autoplay={true}
           slidesPerView={4}
           spaceBetween={50}
