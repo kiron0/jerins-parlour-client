@@ -2,13 +2,14 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Toaster } from "react-hot-toast";
 import Home from "./Pages/Home/Home/Home";
-import Login from "./Pages/Login/Login/Login";
-import SignUp from "./Pages/Login/SignUp/SignUp";
 import Portfolio from "./Pages/Portfolio/Portfolio";
 import Navbar from "./Pages/Shared/Navbar/Navbar";
 import Team from "./Pages/Team/Team";
 import { useEffect, useState } from "react";
 import ContactUs from "./Pages/ContactUs/ContactUs";
+import Login from "./Pages/Login/Login/Login";
+import SignUp from "./Pages/Login/SignUp/SignUp";
+import ResetPassword from "./Pages/Login/ResetPassword";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -26,6 +27,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/team" element={<Team />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<ContactUs />} />

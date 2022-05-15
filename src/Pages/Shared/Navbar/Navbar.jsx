@@ -20,7 +20,9 @@ const Navbar = ({ handleThemeChange, theme, children }) => {
 
   const logout = () => {
     signOut(auth);
-    toast.success(`Thank you, ${user.displayName} to stay with us!`);
+    toast.success(`Thank you, ${user.displayName} to stay with us!`, {
+      autoClose: 5000,
+    });
   };
   const [menuOpen, setMenuOpen] = useState(false);
   const navItems = (
