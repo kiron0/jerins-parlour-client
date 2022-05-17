@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import face from "../../../Assets/Icon/face.png";
 import hair from "../../../Assets/Icon/hair.png";
 import skin from "../../../Assets/Icon/skin.png";
 
 const Services = () => {
+  const [buy, setBuy] = useState(null);
   return (
     <div className="py-24 lg:px-12">
       <h1 className="text-3xl lg:text-4xl text-center font-bold pb-16">
@@ -22,6 +23,9 @@ const Services = () => {
               We craft stunning and amazing web UI, using a well drrafted UX to
               fit your product.
             </p>
+            <button className="btn btn-primary flex mx-auto mt-4 text-white rounded">
+              Buy Now
+            </button>
           </div>
         </div>
 
@@ -36,6 +40,9 @@ const Services = () => {
               Amazing flyers, social media posts and brand representations that
               would make your brand stand out.
             </p>
+            <button className="btn btn-primary flex mx-auto mt-4 text-white rounded">
+              Buy Now
+            </button>
           </div>
         </div>
         <div className="card w-full bg-base-100 px-12">
@@ -49,10 +56,13 @@ const Services = () => {
               With well written codes, we build amazing apps for all platforms,
               mobile and web apps in general.
             </p>
+            <button className="btn btn-primary flex mx-auto mt-4 text-white rounded">
+              Buy Now
+            </button>
           </div>
         </div>
       </div>
-      <Link to="/explore">
+      <Link to="/all-services">
         <button className="btn btn-primary flex mx-auto mt-16 text-white rounded px-10">
           Explore More
         </button>

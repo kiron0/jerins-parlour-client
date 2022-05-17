@@ -71,23 +71,11 @@ const Navbar = ({ handleThemeChange, theme, children }) => {
         <li>
           <NavLink
             className={({ isActive }) =>
-              isActive ? "bg-primary text-white rounded" : "rounded-xl lg:mx-2"
+              isActive ? "bg-primary text-white rounded" : "rounded lg:mx-2"
             }
             to="/dashboard"
           >
             Dashboard
-          </NavLink>
-        </li>
-      )}
-      {user && (
-        <li>
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? "bg-primary text-white rounded" : "rounded-xl lg:mx-2"
-            }
-            to="/admin"
-          >
-            Admin
           </NavLink>
         </li>
       )}
@@ -115,7 +103,7 @@ const Navbar = ({ handleThemeChange, theme, children }) => {
       <li>
         <button
           onClick={handleThemeChange}
-          className="rounded lg:mx-2 font-bold"
+          className="rounded-full lg:mx-2 font-bold"
         >
           {theme ? (
             <svg

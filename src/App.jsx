@@ -15,11 +15,11 @@ import RequireAuth from "./Pages/Login/RequireAuth/RequireAuth";
 import Book from "./Pages/Dashboard/Book";
 import Review from "./Pages/Dashboard/Review";
 import Booking from "./Pages/Dashboard/Booking";
-import AdminDashboard from "./Pages/AdminDashboard/AdminDashboard";
 import Order from "./Pages/AdminDashboard/Order";
 import AddServices from "./Pages/AdminDashboard/AddServices";
 import MakeAdmin from "./Pages/AdminDashboard/MakeAdmin";
 import ManageServices from "./Pages/AdminDashboard/ManageServices";
+import AllServices from "./Pages/AllServices/AllServices";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -41,6 +41,7 @@ function App() {
         <Route path="/team" element={<Team />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/all-services" element={<AllServices />} />
         <Route
           path="/dashboard"
           element={
@@ -52,17 +53,7 @@ function App() {
           <Route index element={<Book />}></Route>
           <Route path="review" element={<Review />}></Route>
           <Route path="booking" element={<Booking />}></Route>
-        </Route>
-
-        <Route
-          path="/admin"
-          element={
-            <RequireAuth>
-              <AdminDashboard />
-            </RequireAuth>
-          }
-        >
-          <Route index element={<Order />}></Route>
+          <Route path="order" element={<Order />}></Route>
           <Route path="add" element={<AddServices />}></Route>
           <Route path="make-admin" element={<MakeAdmin />}></Route>
           <Route path="manage" element={<ManageServices />}></Route>

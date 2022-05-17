@@ -27,6 +27,18 @@ const Dashboard = () => {
           <li className="py-2">
             <NavLink to="/dashboard/review">Review</NavLink>
           </li>
+          <li className="py-2">
+            <NavLink to="/dashboard/order">Order List</NavLink>
+          </li>
+          <li className="py-2">
+            <NavLink to="/dashboard/add">Add Services</NavLink>
+          </li>
+          <li className="py-2">
+            <NavLink to="/dashboard/make-admin">Make Admin</NavLink>
+          </li>
+          <li className="py-2">
+            <NavLink to="/dashboard/manage">Manage Services</NavLink>
+          </li>
         </ul>
       </div>
     </div>

@@ -1,11 +1,11 @@
 import React from "react";
 
-const Portfolio = () => {
+const Services = () => {
   return (
     <div className="flex justify-center items-center h-screen">
-      <h1 className="text-4xl">This is portfolio</h1>
+      <h2 className="text-4xl">All services</h2>
     </div>
   );
 };
 
-export default Portfolio;
+export default Services;
