@@ -1,4 +1,7 @@
 import React from "react";
+import client1 from "../../Assets/Image/client-1.png";
+import client2 from "../../Assets/Image/client-2.png";
+import client3 from "../../Assets/Image/client-3.png";
 
 const Team = () => {
   return (
@@ -21,7 +24,7 @@ const Team = () => {
                 <img
                   alt="team"
                   className="w-20 h-20 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
-                  src="https://dummyimage.com/80x80"
+                  src={client1}
                 />
                 <div className="flex-grow">
                   <h2 className="title-font font-medium">Holden Caulfield</h2>
@@ -34,7 +37,7 @@ const Team = () => {
                 <img
                   alt="team"
                   className="w-20 h-20 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
-                  src="https://dummyimage.com/84x84"
+                  src={client2}
                 />
                 <div className="flex-grow">
                   <h2 className="title-font font-medium">Henry Letham</h2>
@@ -47,7 +50,7 @@ const Team = () => {
                 <img
                   alt="team"
                   className="w-20 h-20 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
-                  src="https://dummyimage.com/88x88"
+                  src={client3}
                 />
                 <div className="flex-grow">
                   <h2 className="title-font font-medium">Oskar Blinde</h2>
@@ -60,7 +63,7 @@ const Team = () => {
                 <img
                   alt="team"
                   className="w-20 h-20 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
-                  src="https://dummyimage.com/90x90"
+                  src={client2}
                 />
                 <div className="flex-grow">
                   <h2 className="title-font font-medium">John Doe</h2>
@@ -73,7 +76,7 @@ const Team = () => {
                 <img
                   alt="team"
                   className="w-20 h-20 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
-                  src="https://dummyimage.com/94x94"
+                  src={client1}
                 />
                 <div className="flex-grow">
                   <h2 className="title-font font-medium">Martin Eden</h2>
@@ -86,7 +89,7 @@ const Team = () => {
                 <img
                   alt="team"
                   className="w-20 h-20 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
-                  src="https://dummyimage.com/98x98"
+                  src={client2}
                 />
                 <div className="flex-grow">
                   <h2 className="title-font font-medium">Boris Kitua</h2>
@@ -99,7 +102,7 @@ const Team = () => {
                 <img
                   alt="team"
                   className="w-20 h-20 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
-                  src="https://dummyimage.com/100x90"
+                  src={client3}
                 />
                 <div className="flex-grow">
                   <h2 className="title-font font-medium">Atticus Finch</h2>
@@ -112,7 +115,7 @@ const Team = () => {
                 <img
                   alt="team"
                   className="w-20 h-20 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
-                  src="https://dummyimage.com/104x94"
+                  src={client2}
                 />
                 <div className="flex-grow">
                   <h2 className="title-font font-medium">Alper Kamu</h2>
@@ -125,7 +128,7 @@ const Team = () => {
                 <img
                   alt="team"
                   className="w-20 h-20 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
-                  src="https://dummyimage.com/108x98"
+                  src={client1}
                 />
                 <div className="flex-grow">
                   <h2 className="title-font font-medium">Rodrigo Monchi</h2>

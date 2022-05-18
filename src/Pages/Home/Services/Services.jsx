@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import face from "../../../Assets/Icon/face.png";
 import hair from "../../../Assets/Icon/hair.png";
 import skin from "../../../Assets/Icon/skin.png";
 
 const Services = () => {
-  const [buy, setBuy] = useState(null);
   return (
     <div className="py-24 lg:px-12">
       <h1 className="text-3xl lg:text-4xl text-center font-bold pb-16">

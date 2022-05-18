@@ -10,6 +10,7 @@ import { toast } from "react-hot-toast";
 import auth from "../../Firebase/firebase.init";
 import Loading from "../../Shared/Loading/Loading";
 import logo from "../../../Assets/logo.png";
+import useToken from "../../../hooks/useToken";
 
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -20,6 +21,8 @@ const Login = () => {
   } = useForm();
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+
+  const [token] = useToken(user || gUser);
 
   let signInError;
   const navigate = useNavigate();
@@ -33,7 +36,7 @@ const Login = () => {
         autoClose: 4000,
       });
     }
-  }, [user, gUser, from, navigate]);
+  }, [token, user, gUser, from, navigate]);
 
   if (loading || gLoading) {
     return <Loading></Loading>;

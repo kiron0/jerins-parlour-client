@@ -11,6 +11,7 @@ import { toast } from "react-hot-toast";
 import auth from "../../Firebase/firebase.init";
 import Loading from "../../Shared/Loading/Loading";
 import logo from "../../../Assets/logo.png";
+import useToken from "../../../hooks/useToken";
 
 const SignUp = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -23,7 +24,7 @@ const SignUp = () => {
     useCreateUserWithEmailAndPassword(auth);
 
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-
+  const [token] = useToken(user || gUser);
   const navigate = useNavigate();
 
   let signInError;
@@ -42,7 +43,7 @@ const SignUp = () => {
     );
   }
 
-  if (user || gUser) {
+  if (token) {
     navigate("/", { replace: true });
     toast.success("Welcome to Jerin's Parlour!");
   }
@@ -50,8 +51,6 @@ const SignUp = () => {
   const onSubmit = async (data) => {
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
-    console.log("update done");
-    navigate("/appointment");
   };
   return (
     <div className="flex h-screen justify-center items-center px-4 lg:px-12">

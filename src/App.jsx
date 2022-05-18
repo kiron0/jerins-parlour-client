@@ -20,6 +20,8 @@ import AddServices from "./Pages/AdminDashboard/AddServices";
 import MakeAdmin from "./Pages/AdminDashboard/MakeAdmin";
 import ManageServices from "./Pages/AdminDashboard/ManageServices";
 import AllServices from "./Pages/AllServices/AllServices";
+import RequireAdmin from "./Pages/Login/RequireAdmin/RequireAdmin";
+import AllUsers from "./Pages/AdminDashboard/AllUsers";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -57,6 +59,14 @@ function App() {
           <Route path="add" element={<AddServices />}></Route>
           <Route path="make-admin" element={<MakeAdmin />}></Route>
           <Route path="manage" element={<ManageServices />}></Route>
+          <Route
+            path="allUsers"
+            element={
+              <RequireAdmin>
+                <AllUsers></AllUsers>
+              </RequireAdmin>
+            }
+          ></Route>
         </Route>
       </Routes>
       <Toaster />

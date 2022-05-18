@@ -1,27 +1,27 @@
 import { useEffect, useState } from "react";
 
-const useAdmin = (user) => {
-  const [admin, setAdmin] = useState(false);
-  const [adminLoading, setAdminLoading] = useState(true);
+const useToken = (user) => {
+  const [token, setToken] = useState("");
   useEffect(() => {
-    const email = user?.email;
+    const email = user?.user?.email;
+    const currentUser = { email: email };
     if (email) {
-      fetch(`http://localhost:5000/admin/${email}`, {
-        method: "GET",
+      fetch(`http://localhost:5000/user/${email}`, {
+        method: "PUT",
         headers: {
           "content-type": "application/json",
-          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
+        body: JSON.stringify(currentUser),
       })
         .then((res) => res.json())
         .then((data) => {
-          setAdmin(data.admin);
-          setAdminLoading(false);
+          const accessToken = data.token;
+          localStorage.setItem("accessToken", accessToken);
+          setToken(accessToken);
         });
     }
   }, [user]);
-
-  return [admin, adminLoading];
+  return [token];
 };
 
-export default useAdmin;
+export default useToken;
