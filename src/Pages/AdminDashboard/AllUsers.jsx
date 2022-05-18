@@ -21,13 +21,12 @@ const AllUsers = () => {
     return <Loading></Loading>;
   }
   return (
-    <div>
-      <h2 className="text-2xl">All Users: {users?.length}</h2>
+    <div className="px-10 py-10 bg-base-300 h-screen rounded-md">
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>
             <tr>
-              <th></th>
+              <th>No</th>
               <th>Name</th>
               <th>Role</th>
               <th>Action</th>

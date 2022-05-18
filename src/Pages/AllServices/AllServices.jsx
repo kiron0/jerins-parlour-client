@@ -1,19 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import useServices from "../../hooks/useServices";
 
 const Services = () => {
-  const [services, setServices] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:5000/services", {
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setServices(data);
-      });
-  }, []);
+  const [services] = useServices();
 
   return (
     <div className="py-24 lg:px-12">
@@ -24,7 +13,7 @@ const Services = () => {
         {services.map(({ _id, img, title, description, price }) => (
           <div className="card w-full bg-base-100 px-4 shadow-lg" key={_id}>
             <figure>
-              <img src={img} alt="Shoes" className="rounded-xl w-100" />
+              <img src={img} alt="" className="rounded-xl w-100" />
             </figure>
             <div className="card-body items-center text-center">
               <h2 className="card-title">{title}</h2>
