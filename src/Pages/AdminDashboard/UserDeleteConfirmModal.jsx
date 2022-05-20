@@ -15,7 +15,10 @@ const UserDeleteConfirmModal = ({ deletingUser, refetch, setDeletingUser }) => {
         if (data.deletedCount) {
           toast.success(`User: ${email} is deleted.`);
           setDeletingUser(null);
+          // refresh the page
           refetch();
+        } else {
+          toast.error(`User: ${email} is not deleted.`);
         }
       });
   };

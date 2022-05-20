@@ -22,19 +22,52 @@ import ManageServices from "./Pages/AdminDashboard/ManageServices";
 import AllServices from "./Pages/AllServices/AllServices";
 import RequireAdmin from "./Pages/Login/RequireAdmin/RequireAdmin";
 import AllUsers from "./Pages/AdminDashboard/AllUsers";
+import { ClimbingBoxLoader } from "react-spinners";
+import { css } from "@emotion/react";
+
+const override = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+`;
 
 function App() {
   const [theme, setTheme] = useState(false);
+
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+  }, []);
+
   useEffect(() => {
     setTheme(JSON.parse(window.localStorage.getItem("theme")));
   }, []);
+
   const handleThemeChange = () => {
     setTheme(!theme);
     window.localStorage.setItem("theme", !theme);
   };
+
   return (
     <div data-theme={theme && "night"}>
-      <Navbar handleThemeChange={handleThemeChange} theme={theme} />
+      {loading ? (
+        <ClimbingBoxLoader
+          color={"#F63E7B"}
+          loading={loading}
+          size={35}
+          css={override}
+        />
+      ) : (
+        <Navbar handleThemeChange={handleThemeChange} theme={theme} />
+      )}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
