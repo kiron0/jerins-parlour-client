@@ -66,12 +66,27 @@ const Testimonials = () => {
         <Swiper
           style={{ paddingBottom: "4.5rem" }}
           autoplay={true}
-          slidesPerView={4}
+          slidesPerView={1}
           spaceBetween={50}
+          breakpoints={{
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 40,
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 50,
+            },
+          }}
           pagination={{
             clickable: true,
           }}
           loop={true}
+          grabCursor={true}
           modules={[Pagination]}
         >
           {testimonials.map(({ image, name, title, text }, index) => {

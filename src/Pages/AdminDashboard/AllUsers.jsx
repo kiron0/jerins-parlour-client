@@ -13,6 +13,7 @@ const AllUsers = () => {
   } = useQuery("users", () =>
     fetch("http://localhost:5000/user", {
       headers: {
+        "content-type": "application/json",
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
     }).then((res) => res.json())

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
@@ -29,15 +29,6 @@ const Login = () => {
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
-  useEffect(() => {
-    if (user || gUser) {
-      navigate(from, { replace: true });
-      toast.success("Welcome back User!", {
-        autoClose: 4000,
-      });
-    }
-  }, [token, user, gUser, from, navigate]);
-
   if (loading || gLoading) {
     return <Loading></Loading>;
   }
@@ -53,6 +44,13 @@ const Login = () => {
   const onSubmit = (data) => {
     signInWithEmailAndPassword(data.email, data.password);
   };
+
+  if (token) {
+    navigate(from, { replace: true });
+    toast.success("Welcome back User!", {
+      autoClose: 4000,
+    });
+  }
 
   return (
     <div className="flex h-screen justify-center items-center px-4 lg:px-12">
